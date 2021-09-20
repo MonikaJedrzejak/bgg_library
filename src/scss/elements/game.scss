@@ -1,0 +1,35 @@
+.gameRow {
+  display: flex;
+  height: 5em;
+  padding: 0 2em;
+  .gamePhoto {
+    height: 4em;
+    width: 4em;
+  }
+  .gameRating {
+    width: 4em;
+    height: 4em;
+    border-radius: 15%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .gameName {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .gameComment {
+    font-size: 0.8em;
+    font-weight: thin;
+  }
+  .gameRank {
+    width: 4em;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
