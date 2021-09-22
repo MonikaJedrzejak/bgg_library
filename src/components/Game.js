@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 
 export default function Game({gameObject}) {
     // const [gameId, name, image, thumbnail, minPlayers, maxPlayers,playingTime, isExpansion, yearPublished, bggRating, averageRating, rank, numPlays, rating, owned, preOrdered, forTrade, previousOwned, want, wantToPlay, wantToBuy, wishList, userComment] = {gameObject}
@@ -28,6 +28,24 @@ export default function Game({gameObject}) {
         userComment: gameObject.userComment,
     })
 
+    // kod ponizej generuje bledy
+    // useEffect(() => {
+    //     fetch(`http://bgg-json.azurewebsites.net/thing/${gameInfo.gameId}`)
+    //         .then((res) => {
+    //             console.log(res);
+    //             return res.json();
+    //         })
+    //         .then((data) => setGameInfo((prev) => {
+    //             return ({
+    //               ...prev,
+    //               designers: data.designers,
+    //               mechanics: data.mechanics,
+    //               description: data.description,
+    //               artists: data.artists,
+    //             });
+    //         }))
+    // }, []);
+
     return (
         <div className="gameRow">
             <p className="gameRank">{gameInfo.rank}</p>
@@ -37,6 +55,7 @@ export default function Game({gameObject}) {
                 <p className="gameComment">{gameInfo.userComment}</p></div>
             <div className="gameRating">{gameInfo.averageRating.toFixed(2)}</div>
             <div className="gameRating">{gameInfo.rating.toFixed(2)}</div>
+            {/* <div>{gameInfo.mechanics}</div> */}
             {/* <p>owned: {gameInfo.owned}</p> */}
         </div>
     )
