@@ -46,6 +46,22 @@ export default function Game({gameObject}) {
     //         }))
     // }, []);
 
+    function changeColor(grade) {
+        const colorTab = ["gray","#b2151f","#b2151f","#d71925","#d71925","#5369a2","#5369a2","#1d8acd","#2fc482", "#249563","#249563"];
+        let num = 0;
+        let color = "";
+        if (grade > 0) {
+            num = grade.toFixed(0);
+        }
+        if (grade < 0) {
+            color = colorTab[0];
+        }
+        color = colorTab[num];
+        
+    return color;
+//background: linear-gradient(90deg, rgba(178,21,31,1) 0%, rgba(215,25,37,1) 20%, rgba(83,105,162,1) 40%, rgba(29,138,205,1) 60%, rgba(47,196,130,1) 80%, rgba(36,149,99,1) 90%);
+    }
+
     return (
         <div className="gameRow">
             <p className="gameRank">{gameInfo.rank}</p>
@@ -53,8 +69,8 @@ export default function Game({gameObject}) {
             <div className="gameName">
                 <p>{gameInfo.name}</p>
                 <p className="gameComment">{gameInfo.userComment}</p></div>
-            <div className="gameRating">{gameInfo.averageRating.toFixed(2)}</div>
-            <div className="gameRating">{gameInfo.rating.toFixed(2)}</div>
+            <div className="gameRating" style={{backgroundColor: changeColor(gameInfo.averageRating)}}>{gameInfo.averageRating.toFixed(2)}</div>
+            <div className="gameRating" style={{backgroundColor: changeColor(gameInfo.rating)}}>{gameInfo.rating.toFixed(2)}</div>
             {/* <div>{gameInfo.mechanics}</div> */}
             {/* <p>owned: {gameInfo.owned}</p> */}
         </div>

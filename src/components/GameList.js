@@ -15,13 +15,13 @@ export default function GameList({userProps}) {
             .then((data) => setList(data));
     }, []);
 
-          console.log(`${list}`);
+          // console.log(`${list}`);
 
 return (
 <div>
   <ul>
-    {list.map((el) => {
-   return <li><Game gameObject={el}/></li>
+    {list.map((el,idx) => {
+   return <li key={idx}><Game gameObject={el}/></li>
  })}
  </ul>
 </div>
