@@ -16,8 +16,20 @@ const handleChange = (e) => {
 };
 
 return (
-    <div>
-        
+    <div className="container">
+        <div className="login_container">
+        <form className="form">
+            <input
+                type="text"
+                name="username"
+                value={formData}
+                onChange={handleChange}
+                placeholder="Enter a BGG username"
+                />
+            <button className="login_btn btn" onClick={handleSubmit}>Submit</button>
+        </form>
+        </div>
+
     </div>
 
 )

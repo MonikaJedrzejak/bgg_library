@@ -7,18 +7,18 @@ import NotFound from './components/NotFound.js';
 
 
 function App() {
-    const [userName,setUserName] = useState(null);
-    const [formData, setFormData] = useState("");
+//     const [userName,setUserName] = useState(null);
+//     const [formData, setFormData] = useState("");
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    setUserName(formData);
-}
+// const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setUserName(formData);
+// }
 
-const handleChange = (e) => {
-    e.preventDefault();
-    setFormData(e.target.value);
-};
+// const handleChange = (e) => {
+//     e.preventDefault();
+//     setFormData(e.target.value);
+// };
 
     return (
         <BrowserRouter>
