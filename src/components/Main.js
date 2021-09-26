@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './Header.js';
 import LoginForm from './LoginForm.js';
+import GameList from './GameList.js';
 
-export default function Main() {
+
+export default function Main({history}) {
+    const [user,setUser] = useState(null);
+
     return (
-        <div>
-            <Header userProps={"Friend!"}/>
-            <LoginForm/>
-        </div>
+        <>
+            <Header userName="Friend"/>
+            <LoginForm user={setUser} history={history}/>
+        </>
     )
 }

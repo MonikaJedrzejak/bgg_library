@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function Header({userProps}) {
+export default function Header({userName}) {
     return (
         <header className="header">
             <div className="container header_container">
-                <span>Hello {userProps}</span>
+                <span>Hello {userName}</span>
             </div>
         </header>
     )

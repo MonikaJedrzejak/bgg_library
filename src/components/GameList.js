@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Game from './Game.js';
 
-export default function GameList({userProps}) {
-    const [user, setUser] = useState(userProps);
+export default function GameList({userName}) {
+    const [user, setUser] = useState(userName);
 
     const [list, setList] = useState([]);
 
