@@ -12,7 +12,7 @@ export default function GameList({userName}) {
                 return res.json();
             })
             .then((data) => setList(data));
-    }, []);
+    }, [userName]);
 
           // console.log(`${list}`);
 
