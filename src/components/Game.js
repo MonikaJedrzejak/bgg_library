@@ -1,8 +1,9 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 
 export default function Game({gameObject}) {
     // const [gameId, name, image, thumbnail, minPlayers, maxPlayers,playingTime, isExpansion, yearPublished, bggRating, averageRating, rank, numPlays, rating, owned, preOrdered, forTrade, previousOwned, want, wantToPlay, wantToBuy, wishList, userComment] = {gameObject}
-    const [gameInfo, setGameInfo] = useState({
+    const [gameInfo, setGameInfo] = useState("null");
+    setGameInfo({
         gameId: gameObject.gameId,
         name: gameObject.name,
         image: gameObject.image,
@@ -26,7 +27,7 @@ export default function Game({gameObject}) {
         wantToBuy: gameObject.wantToBuy ? "true":"false",
         wishList: gameObject.wishList ? "true":"false",
         userComment: gameObject.userComment,
-    })
+    });
 
     // kod ponizej generuje bledy
     // useEffect(() => {

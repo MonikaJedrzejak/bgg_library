@@ -1,12 +1,10 @@
-import React, {useState} from 'react';
-import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import './scss/main.scss';
 import Main from './components/Main.js';
 import Collection from './components/Collection.js';
 import NotFound from './components/NotFound.js';
-import Header from './components/Header.js';
-import LoginForm from './components/LoginForm.js';
-import GameList from './components/GameList.js';
+
 
 
 

@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react';
 import Game from './Game.js';
 
 export default function GameList({userName}) {
-    const [user, setUser] = useState(userName);
-
+    const [user, setUser] = useState("");
     const [list, setList] = useState([]);
+    setUser(userName);
 
       useEffect(() => {
         fetch(`https://bgg-json.azurewebsites.net/collection/${user}`)

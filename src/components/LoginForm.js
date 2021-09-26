@@ -1,18 +1,14 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
-import Collection from './Collection.js';
 
-export default function LoginForm({userName, history}) {
-    // const [userName,setUserName] = useState(null);
+export default function LoginForm({history}) {
+
     const [formData, setFormData] = useState("");
-    // console.log(user);
+
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    userName = formData;
+    // userName = formData;
     history.push(`/collection/user/${formData}`)
-    // setUserName(formData);
-    // console.log(user);
 }
 
 const handleChange = (e) => {
@@ -40,26 +36,3 @@ return (
 )
 }
 
-
-//     return (
-//         <div>
-//             {!userName ? (
-//             <form>
-//                     <input
-//                         type="text"
-//                         name="username"
-//                         value={formData}
-//                         onChange={handleChange}
-//                         placeholder="Enter a BGG username"
-//                     />
-//                     <button onClick={handleSubmit}>Submit</button>
-//                 </form>
-//                  ) : (
-//                      <div>
-//                          Hello {userName}
-//                          <GameList userProps={userName}/>
-//                      </div>
-//                     )}
-//         </div>
-//     )
-// }
