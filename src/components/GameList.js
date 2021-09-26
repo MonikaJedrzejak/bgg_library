@@ -9,7 +9,7 @@ export default function GameList({userName}) {
       useEffect(() => {
         fetch(`https://bgg-json.azurewebsites.net/collection/${user}`)
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 return res.json();
             })
             .then((data) => setList(data));

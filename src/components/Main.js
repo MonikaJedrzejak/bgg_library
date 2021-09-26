@@ -4,7 +4,7 @@ import LoginForm from './LoginForm.js';
 
 
 export default function Main({history}) {
-    const [user,setUser] = useState(null);
+    // const [user,setUser] = useState(null);
 
     return (
         <>
