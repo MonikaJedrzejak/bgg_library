@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
 import './scss/main.scss';
-import GameList from './components/GameList.js';
-import Header from './components/Header.js';
+import Main from './components/Main.js';
+import Collection from './components/Collection.js';
+import NotFound from './components/NotFound.js';
+
 
 function App() {
     const [userName,setUserName] = useState(null);
@@ -18,36 +21,48 @@ const handleChange = (e) => {
 };
 
     return (
-        <div>
-          
-            {!userName ? (
-            <>
-            <Header userProps={"Friend!"}/>
-            <form>
-                    <input
-                        type="text"
-                        name="username"
-                        value={formData}
-                        onChange={handleChange}
-                        placeholder="Enter a BGG username"
-                    />
-                    <button onClick={handleSubmit}>Submit</button>
-                </form>
-                </>
-                 ) : (
-                     <div>
-                         <Header userProps={userName}/>
-                         <GameList userProps={userName}/>
-                     </div>
-                    )}
-        </div>
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Main}/>
+                <Route path="/collection" component={Collection}/>
+                <Route component={NotFound}/>
+            </Switch>
+        </BrowserRouter>
     )
 }
 
 
 export default App;
 
+// return (
+//     <div>
+      
+//         {!userName ? (
+//         <>
+//         <Header userProps={"Friend!"}/>
+//         <form>
+//                 <input
+//                     type="text"
+//                     name="username"
+//                     value={formData}
+//                     onChange={handleChange}
+//                     placeholder="Enter a BGG username"
+//                 />
+//                 <button onClick={handleSubmit}>Submit</button>
+//             </form>
+//             </>
+//              ) : (
+//                  <div>
+//                      <Header userProps={userName}/>
+//                      <GameList userProps={userName}/>
+//                  </div>
+//                 )}
+//     </div>
+// )
+// }
 
+
+// export default App;
 // import React from 'react';
 // import './scss/main.scss';
 // import LoginForm from './components/LoginForm';
