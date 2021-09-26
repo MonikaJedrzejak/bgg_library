@@ -4,4 +4,36 @@
   background-color: $header-color;
   color: white;
   font-weight: bold;
+  border-bottom: 4px solid $header-color;
+}
+.header_container {
+  max-width: 1120px;
+  height: 3.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header_userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.header_nav {
+  height: 100%;
+  display: flex;
+
+  &__item {
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    padding: 0 0.6em;
+    border-bottom: 4px solid transparent;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: $dark-blue-color;
+      border-color: $dark-blue-color;
+    }
+  }
 }

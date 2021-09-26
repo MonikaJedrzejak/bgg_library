@@ -8,7 +8,8 @@ export default function LoginForm({history}) {
 const handleSubmit = (e) => {
     e.preventDefault();
     // userName = formData;
-    history.push(`/collection/user/${formData}`)
+    history.push(`/collection/user/${formData}`);
+    localStorage.setItem("userNameLS",formData);
 }
 
 const handleChange = (e) => {
