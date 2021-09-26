@@ -2,12 +2,11 @@ import React, {useState, useEffect} from 'react';
 import Game from './Game.js';
 
 export default function GameList({userName}) {
-    const [user, setUser] = useState("");
+    // const [user, setUser] = useState(userName);
     const [list, setList] = useState([]);
-    setUser(userName);
 
       useEffect(() => {
-        fetch(`https://bgg-json.azurewebsites.net/collection/${user}`)
+        fetch(`https://bgg-json.azurewebsites.net/collection/${userName}`)
             .then((res) => {
                 // console.log(res);
                 return res.json();
