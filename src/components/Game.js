@@ -68,7 +68,7 @@ export default function Game({gameObject}) {
             <td className="gameRank">{gameInfo.rank > 0 ? gameInfo.rank : "-" }</td>
             <td><img src={gameInfo.thumbnail} alt={gameInfo.name} className="gamePhoto"/></td>
             <td><div className="gameName">
-                <a href={`https://boardgamegeek.com/boardgame/${gameInfo.gameId}`} target="_blank">{gameInfo.name}</a>
+                <a href={`https://boardgamegeek.com/boardgame/${gameInfo.gameId}`} target="_blank" rel="noreferrer">{gameInfo.name}</a>
                 <p className="gameComment">{gameInfo.userComment}</p></div></td>
             <td><div className="gameRating" style={{backgroundColor: changeColor(gameInfo.averageRating)}}>{gameInfo.averageRating.toFixed(2)}</div></td>
             <td><div className="gameRating" style={{backgroundColor: changeColor(gameInfo.rating)}}>{gameInfo.rating > 0 ? gameInfo.rating.toFixed(2): 0}</div></td>
