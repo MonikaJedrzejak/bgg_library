@@ -1,28 +1,25 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Game from './Game.js';
 
-export default function GameList({userName}) {
-    // const [user, setUser] = useState(userName);
-    const [list, setList] = useState([]);
-
-      useEffect(() => {
-        fetch(`https://bgg-json.azurewebsites.net/collection/${userName}`)
-            .then((res) => {
-                // console.log(res);
-                return res.json();
-            })
-            .then((data) => setList(data));
-    }, [userName]);
-
-          // console.log(`${list}`);
+export default function GameList({gameList}) {
 
 return (
-<div>
-  <ul>
-    {list.map((el,idx) => {
-   return <li key={idx}><Game gameObject={el}/></li>
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th> </th>
+      <th>Title</th>
+      <th>BGG</th>
+      <th>User</th>
+      <th>Expansion</th>
+    </tr>
+  </thead>
+  <tbody>
+  {gameList.map((el,idx) => {
+   return <tr key={idx}><Game gameObject={el}/></tr>
  })}
- </ul>
-</div>
+  </tbody>
+</table>
 );
 }

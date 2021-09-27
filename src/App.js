@@ -14,7 +14,7 @@ function App() {
 
     return (
         <>
-                <BrowserRouter>
+            <BrowserRouter>
                 <Switch>
                     <Route exact path="/" component={Main}/>
                     <Route exact path="/collection/user/:userName" component={Collection}/>

@@ -64,16 +64,17 @@ export default function Game({gameObject}) {
     }
 
     return (
-        <div className="gameRow">
-            <p className="gameRank">{gameInfo.rank}</p>
-            <img src={gameInfo.thumbnail} alt={gameInfo.name} className="gamePhoto"/>
-            <div className="gameName">
-                <p>{gameInfo.name}</p>
-                <p className="gameComment">{gameInfo.userComment}</p></div>
-            <div className="gameRating" style={{backgroundColor: changeColor(gameInfo.averageRating)}}>{gameInfo.averageRating.toFixed(2)}</div>
-            <div className="gameRating" style={{backgroundColor: changeColor(gameInfo.rating)}}>{gameInfo.rating.toFixed(2)}</div>
+        <>
+            <td className="gameRank">{gameInfo.rank > 0 ? gameInfo.rank : "-" }</td>
+            <td><img src={gameInfo.thumbnail} alt={gameInfo.name} className="gamePhoto"/></td>
+            <td><div className="gameName">
+                <a href={`https://boardgamegeek.com/boardgame/${gameInfo.gameId}`} target="_blank">{gameInfo.name}</a>
+                <p className="gameComment">{gameInfo.userComment}</p></div></td>
+            <td><div className="gameRating" style={{backgroundColor: changeColor(gameInfo.averageRating)}}>{gameInfo.averageRating.toFixed(2)}</div></td>
+            <td><div className="gameRating" style={{backgroundColor: changeColor(gameInfo.rating)}}>{gameInfo.rating > 0 ? gameInfo.rating.toFixed(2): 0}</div></td>
+            <td class="gameRank">{gameInfo.isExpansion ? "Yes" : "No"}</td>
             {/* <div>{gameInfo.mechanics}</div> */}
             {/* <p>owned: {gameInfo.owned}</p> */}
-        </div>
+        </>
     )
 }
