@@ -21,7 +21,9 @@ export default function Collection() {
         <>
         <Header userName={userName}/>
         <DataBar gameList={list}/>
-        <GameList userName={userName} gameList={list}/>
+        <div className="container">
+            <GameList userName={userName} gameList={list}/>
+        </div>
         </>
     )
 }

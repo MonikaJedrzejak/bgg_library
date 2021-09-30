@@ -17,12 +17,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 0.5em;
 }
 .gameName {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin: 0.5em;
 }
 .gameComment {
   font-size: 0.8em;
@@ -34,4 +36,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.gameExpansion {
+  background-color: $dark-blue-color;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0.2em;
+}
+.gameList_header {
+  border-bottom: 1px solid $dark-blue-color;
+  // border-left: 1px solid $dark-blue-color;
+  // border-right: 1px solid $dark-blue-color;
+  color: $dark-blue-color;
+  font-size: 0.9em;
+  text-align: center;
+  th {
+    margin: 0.5em;
+    padding: 0.5em 0;
+  }
+}
+
+.gameList_row {
+  &:hover {
+    background-color: $shadow-color;
+  }
+}
+
+.gameInfo {
+  text-align: center;
+  padding: 0.8em;
 }

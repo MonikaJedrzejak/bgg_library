@@ -17,14 +17,14 @@ export default function Game({gameObject}) {
         rank: gameObject.rank,
         numPlays: gameObject.numPlays,
         rating: gameObject.rating,
-        owned: gameObject.owned ? "true":"false",
-        preOrdered: gameObject.preOrdered ? "true":"false",
-        forTrade: gameObject.forTrade ? "true":"false",
-        previousOwned: gameObject.previousOwned ? "true":"false",
-        want: gameObject.want ? "true":"false",
-        wantToPlay: gameObject.wantToPlay ? "true":"false",
-        wantToBuy: gameObject.wantToBuy ? "true":"false",
-        wishList: gameObject.wishList ? "true":"false",
+        owned: gameObject.owned ,
+        preOrdered: gameObject.preOrdered,
+        forTrade: gameObject.forTrade,
+        previousOwned: gameObject.previousOwned,
+        want: gameObject.want,
+        wantToPlay: gameObject.wantToPlay,
+        wantToBuy: gameObject.wantToBuy,
+        wishList: gameObject.wishList,
         userComment: gameObject.userComment,
     };
 
@@ -69,12 +69,14 @@ export default function Game({gameObject}) {
             <td><img src={gameInfo.thumbnail} alt={gameInfo.name} className="gamePhoto"/></td>
             <td><div className="gameName">
                 <a href={`https://boardgamegeek.com/boardgame/${gameInfo.gameId}`} target="_blank" rel="noreferrer">{gameInfo.name}</a>
-                <p className="gameComment">{gameInfo.userComment}</p></div></td>
+                <p className="gameComment">{gameInfo.isExpansion ? <p className="gameExpansion">Expansion</p> : null}</p></div></td>
+            <td className="gameInfo">{gameInfo.minPlayers} - {gameInfo.maxPlayers}</td>
+            <td className="gameInfo">{gameInfo.playingTime}</td>
+            <td className="gameInfo">{gameInfo.yearPublished}</td>
             <td><div className="gameRating" style={{backgroundColor: changeColor(gameInfo.averageRating)}}>{gameInfo.averageRating.toFixed(2)}</div></td>
             <td><div className="gameRating" style={{backgroundColor: changeColor(gameInfo.rating)}}>{gameInfo.rating > 0 ? gameInfo.rating.toFixed(2): 0}</div></td>
-            <td class="gameRank">{gameInfo.isExpansion ? "Yes" : "No"}</td>
+            <td class="gameRank">{gameInfo.owned ? "Yes" : "No"}</td>
             {/* <div>{gameInfo.mechanics}</div> */}
-            {/* <p>owned: {gameInfo.owned}</p> */}
         </>
     )
 }
