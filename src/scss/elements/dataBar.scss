@@ -4,3 +4,74 @@
   background-color: $bar-color;
   color: white;
 }
+.dataBar_container {
+  width: 100%;
+  height: 2.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.icons_bar {
+  color: white;
+}
+
+.navbar_filter {
+  position: fixed;
+  top: 6em;
+  bottom: 0;
+  padding: 5px;
+  background: $bar-color;
+  width: 280px;
+  transition: 0.5s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navBar_filter_list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filter_list_item {
+  margin: 10px;
+  padding: 5px;
+  border: 2px solid #3085d6;
+  border-radius: 5px;
+  background: $bar-color;
+  // text-shadow: 1px 1px 1px black;
+  // font-weight: 900;
+  color: white;
+  width: 80%;
+}
+
+.navBar_filter_reset {
+  color: white;
+  background-color: $header-color;
+  border: none;
+  margin: 10px;
+  padding: 5px;
+  border: 2px solid $dark-blue-color;
+  border-radius: 5px;
+  width: 60%;
+}
+.dataBar_btn {
+  color: white;
+  background-color: $bar-color;
+  font-size: 1.5em;
+  border: none;
+}
+.filter_input {
+  width: 4em;
+}
+.dataBar_search {
+  width: 10em;
+  color: gray;
+  // background-image: url("https://cdn3.iconfinder.com/data/icons/unicons-vector-icons-pack/32/search-512.png");
+  // background-repeat: no-repeat;
+  // background-position: left center;
+  // background-size: contain;
+}

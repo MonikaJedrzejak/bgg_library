@@ -10,9 +10,9 @@ return (
       <th>Rank</th>
       <th> </th>
       <th>Title</th>
-      <th><i class="fas fa-user-friends"></i></th>
-      <th><i class="fas fa-clock"></i></th>
-      <th><i class="far fa-calendar-alt"></i></th>
+      <th><i className="fas fa-user-friends"></i></th>
+      <th><i className="fas fa-clock"></i></th>
+      <th><i className="far fa-calendar-alt"></i></th>
       <th>BGG</th>
       <th>User</th>
       <th>Own</th>

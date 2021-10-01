@@ -48,7 +48,7 @@ export default function Game({gameObject}) {
     // }, []);
 
     function changeColor(grade) {
-        const colorTab = ["gray","#b2151f","#b2151f","#d71925","#d71925","#5369a2","#5369a2","#1d8acd","#2fc482", "#249563","#249563"];
+        const colorTab = ["#e9e7e7","#b2151f","#b2151f","#d71925","#d71925","#5369a2","#5369a2","#1d8acd","#2fc482", "#249563","#249563"];
         let num = 0;
         let color = "";
         if (grade > 0) {
@@ -69,13 +69,13 @@ export default function Game({gameObject}) {
             <td><img src={gameInfo.thumbnail} alt={gameInfo.name} className="gamePhoto"/></td>
             <td><div className="gameName">
                 <a href={`https://boardgamegeek.com/boardgame/${gameInfo.gameId}`} target="_blank" rel="noreferrer">{gameInfo.name}</a>
-                <p className="gameComment">{gameInfo.isExpansion ? <p className="gameExpansion">Expansion</p> : null}</p></div></td>
+                <div className="gameComment">{gameInfo.isExpansion ? <p className="gameExpansion">Expansion</p> : null}</div></div></td>
             <td className="gameInfo">{gameInfo.minPlayers} - {gameInfo.maxPlayers}</td>
             <td className="gameInfo">{gameInfo.playingTime}</td>
             <td className="gameInfo">{gameInfo.yearPublished}</td>
             <td><div className="gameRating" style={{backgroundColor: changeColor(gameInfo.averageRating)}}>{gameInfo.averageRating.toFixed(2)}</div></td>
-            <td><div className="gameRating" style={{backgroundColor: changeColor(gameInfo.rating)}}>{gameInfo.rating > 0 ? gameInfo.rating.toFixed(2): 0}</div></td>
-            <td class="gameRank">{gameInfo.owned ? "Yes" : "No"}</td>
+            <td><div className="gameRating" style={{backgroundColor: changeColor(gameInfo.rating)}}>{gameInfo.rating > 0 ? gameInfo.rating.toFixed(2): "-"}</div></td>
+            <td className="gameRank">{gameInfo.owned ? "Yes" : "No"}</td>
             {/* <div>{gameInfo.mechanics}</div> */}
         </>
     )

@@ -17,12 +17,16 @@ export default function Collection() {
             .then((data) => setList(data));
     }, [userName]);
 
+    let newList = [];
+    // newList = list.filter((value)=> value.owned === true && value.yearPublished > 2014);
+    newList = list;
+
     return (
         <>
         <Header userName={userName}/>
         <DataBar gameList={list}/>
         <div className="container">
-            <GameList userName={userName} gameList={list}/>
+            <GameList userName={userName} gameList={newList}/>
         </div>
         </>
     )
