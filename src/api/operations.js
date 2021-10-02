@@ -1,18 +1,20 @@
 const API_URL_COLLECTION = "https://bgg-json.azurewebsites.net/collection";
 const API_URL_THING = "https://bgg-json.azurewebsites.net/thing";
 
-export function getCollection(user) {
+export function getCollection(user,cb) {
     fetch(`${API_URL_COLLECTION}/${user}`)
-        .then((res) => {
-            return res.json();
+        .then(res =>
+            res.json())
+        .then(data => {
+            cb(data)
         })
-        .then((data) => {return data});
 }
 
-export function getGameInfo(idGame) {
+export function getGameInfo(idGame,cb) {
     fetch(`${API_URL_THING}/${idGame}`)
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {return data});
+    .then(res =>
+        res.json())
+    .then(data => {
+        cb(data)
+    })
 }
