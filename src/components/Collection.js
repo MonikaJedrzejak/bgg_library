@@ -8,6 +8,7 @@ import {getCollection} from '../api/operations';
 export default function Collection() {
     let { userName } = useParams();
     const [list, setList] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         getCollection(userName, setList);
@@ -23,13 +24,23 @@ export default function Collection() {
     // }, [userName]);
 
     let newList = [];
-    // newList = list.filter((value)=> value.owned === true && value.yearPublished > 2014);
-    newList = list;
+
+    const filterList = (list, query) => {
+            if (!query) {
+                return list;
+            }
+            return list.filter((el) => {
+                const itemName = el.name.toLowerCase();
+                return itemName.includes(query);
+            });
+        };
+        newList = filterList(list, searchQuery);
+
 
     return (
         <>
         <Header userName={userName}/>
-        <DataBar gameList={list}/>
+        <DataBar gameList={list} searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
         <div className="container">
             <GameList userName={userName} gameList={newList}/>
         </div>

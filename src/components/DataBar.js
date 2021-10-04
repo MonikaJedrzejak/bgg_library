@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
+import SearchBar from './SearchBar';
 
-export default function DataBar({gameList}) {
+export default function DataBar({gameList, searchQuery, setSearchQuery}) {
     const [visible, setVisible] = useState(false);
 
     const visibleStyle = {
@@ -11,14 +12,13 @@ export default function DataBar({gameList}) {
         right: '-300px'
     };
 
-
     return (
     <>
         <div className="dataBar">
             <div className="container dataBar_container">
                 <div>Games in collection: {gameList.length}</div>
                 <div className="icons_bar">
-                <input type="text" className="dataBar_search" placeholder="Search..."></input>
+                <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
                 <button className="dataBar_btn" onClick={() => visible ? setVisible(false) : setVisible(true)}><i className="fas fa-filter"></i></button>
                 </div>
             </div>
