@@ -76,3 +76,13 @@
   // background-position: left center;
   // background-size: contain;
 }
+.navBar_filter_button {
+  color: white;
+  background-color: $header-color;
+  border: none;
+  margin: 10px;
+  padding: 5px;
+  border: 2px solid $dark-blue-color;
+  border-radius: 5px;
+  width: 60%;
+}

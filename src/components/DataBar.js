@@ -1,8 +1,13 @@
 import React,{useState} from 'react';
 import SearchBar from './SearchBar';
+import FilterMinMax from './FilterMinMax';
 
-export default function DataBar({gameList, searchQuery, setSearchQuery}) {
+export default function DataBar({gameList, searchQuery, setSearchQuery, setFilterState, resetFilter}) {
     const [visible, setVisible] = useState(false);
+    const [rankMin, setRankMin] = useState('');
+    const [rankMax, setRankMax] = useState('');
+    // tutaj duzo min, max
+
 
     const visibleStyle = {
         right: '0'
@@ -11,6 +16,13 @@ export default function DataBar({gameList, searchQuery, setSearchQuery}) {
     const hiddenStyle = {
         right: '-300px'
     };
+
+const filterChange = () => {
+    setFilterState({
+        rankMin: rankMin,
+        rankMax: rankMax,
+    });
+}
 
     return (
     <>
@@ -42,9 +54,7 @@ export default function DataBar({gameList, searchQuery, setSearchQuery}) {
             <li className="filter_list_item">
             <div>
                     <h6>Rank</h6>
-                    <div>
-                    <input className="filter_input" type="text"></input> - <input className="filter_input" type="text"></input>
-                    </div>
+                    <FilterMinMax filterMin={rankMin} filterMax={rankMax} setFilterMin={setRankMin} setFilterMax={setRankMax}/>
                 </div>
             </li>
             <li className="filter_list_item">
@@ -87,7 +97,8 @@ export default function DataBar({gameList, searchQuery, setSearchQuery}) {
                 </div>
             </li>
         </ul>
-        <button className="navBar_filter_reset">Reset filter</button>
+        <button className="navBar_filter_button" onClick={filterChange}>Filter</button>
+        <button className="navBar_filter_reset" onClick={resetFilter} >Reset filter</button>
     </div>
     </>
     )
