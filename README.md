@@ -1,5 +1,5 @@
 # About
-Import your collection data from https://boardgamegeek.com/ .
+Import your collection data from https://boardgamegeek.com/
 
-Demo: https://bgglibrary.netlify.app/
-user for test: "bobry"
+* Demo: https://bgglibrary.netlify.app/
+* user for test: "bobry"
