@@ -10,6 +10,7 @@ export default function Collection() {
     const [list, setList] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
 
+
     useEffect(() => {
         getCollection(userName, setList);
     }, [userName]);
