@@ -10,8 +10,20 @@ export default function Collection() {
     const [list, setList] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [filterState, setFilterState] = useState({
-        rankMin: 0,
-        rankMax: 99999999999999,
+        rankMin: -10,
+        rankMax: 999999,
+        playersMin: -1,
+        playersMax: 999,
+        timeMin: -1,
+        timeMax: 9999,
+        yearMin: -1,
+        yearMax: 9999,
+        bggMin: -1,
+        bggMax: 10,
+        userMin: -1,
+        userMax: 10,
+        gameOwned: 'Included',
+        expansion: 'Included',
     });
 
 
@@ -41,17 +53,50 @@ export default function Collection() {
             });
         };
         newList = filterList(newList, searchQuery);
-        newList = newList.filter((el) => el.rank >= filterState.rankMin && el.rank <= filterState.rankMax);
+        newList = newList.filter((el) => (
+            el.rank >= filterState.rankMin && el.rank <= filterState.rankMax &&
+            el.minPlayers >= filterState.playersMin && el.maxPlayers <= filterState.playersMax &&
+            el.playingTime >= filterState.timeMin && el.playingTime <= filterState.timeMax &&
+            el.yearPublished >= filterState.yearMin && el.yearPublished <= filterState.yearMax &&
+            el.averageRating >= filterState.bggMin && el.averageRating <= filterState.bggMax &&
+            el.rating >= filterState.userMin && el.rating <= filterState.userMax
+            ));
+        if(filterState.gameOwned === 'Only') {
+            newList = newList.filter((el)=> el.owned === true);
+        } else if(filterState.gameOwned === 'Excluded') {
+            newList = newList.filter((el)=> el.owned === false);
+        }
+        if(filterState.expansion === 'Only') {
+            newList = newList.filter((el)=> el.isExpansion === true);
+        } else if(filterState.expansion === 'Excluded') {
+            newList = newList.filter((el)=> el.isExpansion === false);
+        }
 
         const resetFilter = () => {
-            newList = [...list];
-        } // nie dziala
+            // newList = [...list];
+            setFilterState({
+                rankMin: -10,
+            rankMax: 999999,
+            playersMin: -1,
+            playersMax: 999,
+            timeMin: -1,
+            timeMax: 9999,
+            yearMin: -1,
+            yearMax: 9999,
+            bggMin: -1,
+            bggMax: 10,
+            userMin: -1,
+            userMax: 10,
+            gameOwned: 'Included',
+            expansion: 'Included',
+            });
+        }
 
     return (
         <>
         <div className="sticky_wrapper">
             <Header userName={userName}/>
-            <DataBar gameList={list} searchQuery={searchQuery} setSearchQuery={setSearchQuery} setFilterState={setFilterState} resetFilter={resetFilter} />
+            <DataBar gameList={list} filteredList={newList} searchQuery={searchQuery} setSearchQuery={setSearchQuery} setFilterState={setFilterState} resetFilter={resetFilter} />
         </div>
         <div className="container">
             <GameList userName={userName} gameList={newList}/>

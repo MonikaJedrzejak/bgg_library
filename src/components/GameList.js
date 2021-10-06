@@ -11,8 +11,9 @@ export default function GameList({gameList}) {
     time: 'sort',
     year: 'sort',
     players: 'sort',
+    name: 'sort',
   });
-
+  let newGameList = [...gameList];
   const onSortChange = (category) => {
 		let nextSort;
 
@@ -31,6 +32,7 @@ export default function GameList({gameList}) {
             time: 'sort',
             year: 'sort',
             players: 'sort',
+            name: 'sort',
           });
         }
         else if (category === 'bgg') {
@@ -41,6 +43,7 @@ export default function GameList({gameList}) {
             time: 'sort',
             year: 'sort',
             players: 'sort',
+            name: 'sort',
           });
         }
           else if (category === 'user') {
@@ -51,6 +54,7 @@ export default function GameList({gameList}) {
               time: 'sort',
               year: 'sort',
               players: 'sort',
+              name: 'sort',
             });
         }
         else if (category === 'time') {
@@ -61,6 +65,7 @@ export default function GameList({gameList}) {
             time: nextSort,
             year: 'sort',
             players: 'sort',
+            name: 'sort',
           });
       }
       else if (category === 'year') {
@@ -71,6 +76,7 @@ export default function GameList({gameList}) {
           time: 'sort',
           year: nextSort,
           players: 'sort',
+          name: 'sort',
         });
     }
     else if (category === 'players') {
@@ -81,11 +87,21 @@ export default function GameList({gameList}) {
         time: 'sort',
         year: 'sort',
         players: nextSort,
+        name: 'sort',
       });
+    }
+      else if (category === 'name') {
+        setSortButton({
+          rank: 'sort',
+          bgg: 'sort',
+          user: 'sort',
+          time: 'sort',
+          year: 'sort',
+          players: 'sort',
+          name: nextSort,
+        })
   }
-
 	};
-  let newGameList = [...gameList];
   const sortList = (sortType, category) => {
     if (category === 'rank') {
       if (sortType === 'sort-down') return (a, b) => b.rank - a.rank;
@@ -131,7 +147,10 @@ return (
       </th>
       <th> </th>
       <th>
+      {/* <button className="sortButton" onClick={() => onSortChange('name')}> */}
         Title
+        {/* <i className={`fas fa-${sortButton.name}`} /> */}
+        {/* </button> */}
       </th>
       <th>
       <button className="sortButton" onClick={() => onSortChange('players')}>

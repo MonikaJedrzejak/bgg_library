@@ -10,7 +10,7 @@ export default function FilterMinMax({filterMin, setFilterMin, filterMax, setFil
             type="text"
             placeholder="MIN">
             </input>
-             - 
+            <span> - </span>
             <input
             value={filterMax}
             onInput={emax => setFilterMax(emax.target.value)}
