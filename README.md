@@ -1,7 +1,7 @@
 # BGG Library
 
-> Import your board games collection data from https://boardgamegeek.com/.
-> Live demo [_here_](https://bgglibrary.netlify.app/) -> user login for tests: "bobry"
+- Import your board games collection data from https://boardgamegeek.com/.
+- Live demo [_here_](https://bgglibrary.netlify.app/) -> user login for tests: "bobry"
 
 ## Table of Contents
 
@@ -41,13 +41,11 @@ To do:
 
 ## Screenshots
 
-![Log in screen](./img/s4.png)
-![Loaded collection](./img/s5.png)
-![Filtering](./img/s3.png)
-![Searching](./img/s2.png)
-![Sorting](./img/s1.png)
-
-<!-- If you have screenshots you'd like to share, include them here. -->
+![Log in screen](./img/s4.PNG)
+![Loaded collection](./img/s5.PNG)
+![Filtering](./img/s3.PNG)
+![Searching](./img/s2.PNG)
+![Sorting](./img/s1.PNG)
 
 ## Project Status
 
