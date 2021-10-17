@@ -182,9 +182,10 @@ return (
     </tr>
   </thead>
   <tbody>
-  {newGameList.sort(sortList(currentSort,sortCategory)).map((el,idx) => {
-    return <tr className="gameList_row" key={idx}><Game gameObject={el}/></tr>
-  })}
+    {newGameList.length ? (
+  newGameList.sort(sortList(currentSort,sortCategory)).map((el,idx) => {
+    return <tr className="gameList_row" key={idx}><Game gameObject={el}/></tr> })) : (<p>Loading...</p>)
+  }
   </tbody>
 </table>
 );
