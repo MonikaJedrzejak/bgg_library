@@ -28,7 +28,7 @@ export default function Game({gameObject}) {
         userComment: gameObject.userComment,
     };
 
-
+//cccc
     // kod ponizej generuje bledy
     // useEffect(() => {
     //     fetch(`http://bgg-json.azurewebsites.net/thing/${gameInfo.gameId}`)
